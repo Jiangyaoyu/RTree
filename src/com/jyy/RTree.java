@@ -8,13 +8,10 @@ import java.util.List;
 import java.util.TreeMap;
 
 public class RTree {
-    /**
-     * @paNODESPACE 节点最大容量
-     */
-    public static final int MaxNODESPACE = 5;
-    public static HashMap<Integer,Node> hashMap= new HashMap(); //静态hash
-    public static final int NODESPACE = -3;
-    public static  int MAXPAGE = 0;
+
+    public static final int MaxNODESPACE = 5;//每个节点最大容量
+    public static HashMap<Integer,Node> hashMap= new HashMap(); //静态hash用于存储数据
+    public static  int MAXPAGE = 0;//为节点生成节点标识
 
     public void Initite(int parent, int pageNumber, int level,int nodeSpace)
     {

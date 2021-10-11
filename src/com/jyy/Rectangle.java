@@ -2,20 +2,9 @@ package com.jyy;
 
 public class Rectangle implements Cloneable
 {
-    /**
-     * 左下角坐标
-     */
-    private Point low;
+    private Point low;//左下角坐标
 
-    /**
-     * 右上角坐标
-     */
-    private Point high;
-
-    /**
-     * 坐标点的描述，即关键字
-     */
-    private String description;
+    private Point high;//右上角坐标
 
     public Rectangle(Point p1, Point p2)
     {
@@ -37,13 +26,11 @@ public class Rectangle implements Cloneable
         }
         low = (Point) p1.clone();
         high = (Point) p2.clone();
-
     }
 
     public Rectangle(Point p1, Point p2, String description)
     {
         this(p1, p2);
-        this.description = description;
     }
 
     /**
@@ -140,9 +127,7 @@ public class Rectangle implements Cloneable
     }
 
     public String toStr() {
-        if(description == null)
-            return "Rectangle Low:" + low + "\tHigh:" + high ;
-        return "Rectangle Low:" + low + "\tHigh:" + high  + "\n" + description ;
+        return "Rectangle Low:" + low + "\tHigh:" + high  + "\n"  ;
     }
 
     /**

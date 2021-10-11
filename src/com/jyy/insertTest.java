@@ -43,19 +43,14 @@ public class insertTest {
             Point p1 = new Point(new float[]{f[i++], f[i++]});
             Point p2 = new Point(new float[]{f[i++], f[i++]});
             Rectangle rectangle = new Rectangle(p1, p2);//生成区域
-            //System.out.println("insert " + j + "th " + rectangle + "......");
             tree.insert(rectangle,-2);
-            //System.out.println(RTree.hashMap.get(0));
             j++;
         }
         System.out.println("Insert finished.");
-        System.out.println("---------------------------------"+RTree.MAXPAGE);
         for(int num =0;num<=RTree.MAXPAGE;num++){
-           // System.out.println(RTree.hashMap.get(num));
+           System.out.println(RTree.hashMap.get(num));
         }
 
-        //删除结点
-        //System.out.println("---------------------------------");
         System.out.println("Begin delete.......");
 
         j = 0;
@@ -63,14 +58,6 @@ public class insertTest {
             Point p1 = new Point(new float[]{f[i++],f[i++]});
             Point p2 = new Point(new float[]{f[i++],f[i++]});
              Rectangle rectangle = new Rectangle(p1, p2);
-            System.out.println("delete " + j + "th " + rectangle + "==========================");
-            if(j==2){
-                for(int num =0;num<=RTree.MAXPAGE;num++){
-                    if(RTree.hashMap.get(num)!=null)
-                         System.out.println(RTree.hashMap.get(num));
-                }
-                System.out.println();
-            }
              tree.Delete(rectangle);
             for(int num =0;num<=RTree.MAXPAGE;num++){
                 if(RTree.hashMap.get(num)!=null)
@@ -79,7 +66,6 @@ public class insertTest {
             j++;
             System.out.println("==============================================\n");
         }
-        //System.out.println(RTree.hashMap.get(0));
 
     }
 }

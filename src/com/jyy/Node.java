@@ -6,11 +6,11 @@ import java.util.zip.GZIPOutputStream;
 public class Node {
 
     public int level; //层次
-    public Rectangle[] datas;//节点数据集合
+    public Rectangle[] datas;//存储的数据集合即 最小边界矩形
     public int usedSpace;//已使用的空间
-    public int[] branches;//存储所指向节点的标识page,和节点数据集合一一对应，如果为叶子节点则为-2
-    public int pageNumber;//当前节点的page标识
-    public int parent;//父节点标识
+    public int[] branches;//已存储的数据所指向的子节点，如果没有子节点则为-2
+    public int pageNumber;//当前节点的page标识，全局唯一
+    public int parent;//父节点标识，如果是根节点则标识为-1
 
     protected Node(int parent, int pageNumber, int level,int nodeSpace) {
         this.parent = parent;
@@ -46,7 +46,7 @@ public class Node {
             return RTree.hashMap.get(this.parent);
         }
     }
-    public void adjustTree(Node node1, Node node2) {
+    public void  adjustTree(Node node1, Node node2) {
         // 先要找到指向原来旧的结点（即未添加Rectangle之前）的条目的索引
         for (int i = 0; i < this.usedSpace; i++) {
             if (this.branches[i] == node1.pageNumber) {
