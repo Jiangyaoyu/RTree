@@ -44,7 +44,6 @@ public class insertTest {
             Point p2 = new Point(new float[]{f[i++], f[i++]});
             Rectangle rectangle = new Rectangle(p1, p2);//生成区域
             //System.out.println("insert " + j + "th " + rectangle + "......");
-            //tree.insert(rectangle, -2);
             tree.insert(rectangle,-2);
             //System.out.println(RTree.hashMap.get(0));
             j++;
